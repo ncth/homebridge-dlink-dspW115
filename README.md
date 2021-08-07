@@ -1,5 +1,6 @@
 # homebridge-dlink-dspW115
-Homebridge plugin to control the Dlink DSP-W115 Smart Socket with Siri.
+Homebridge plugin to control the Dlink DSP-W115 Smart Socket.
+
 
 Based on the excellent work done by @[Garfonso](https://github.com/Garfonso), this is basically a wrapper over his node library at https://github.com/Garfonso/dlinkWebSocketClient
 
@@ -13,15 +14,6 @@ To be able to control the dlink socket via homebridge, it needs to unlinked from
 4. Follow the setup process and let the device join your wifi
 5. When the device reboots after joining your wifi, do **not** finish setup, just **close** the app.
 
-You can now use your PIN and control the device with this library.
+You can now use your PIN and control the device with this plugin.
 
-Add the following to your homebridge config:
-
-```json
-{
-  "accessory": "DlinkSmartPlug",
-  "name": "Socket", # Name it whatever you like
-  "ip": "192.168.xx.xx", # The IP address of the smart plug on your local network
-  "pin": "937931" # The pin of the smart plug (mentioned on dlink smart plug / box / documentation)
-}
-```
+Configure the plugin in the homebridge gui.

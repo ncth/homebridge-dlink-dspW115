@@ -4,17 +4,15 @@
   "description": "Turn on/off Dlink DSP W115 smart plug",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm link && nodemon"
   },
-  "author": "Siddharth Gupta",
+  "author": "ncth",
   "license": "MIT",
   "engines": {
     "homebridge": ">=0.4.0"
   },
-  "dependencies": [
-    "dlink_websocketclient"
-  ],
-  "repository": "https://github.com/biocross/homebridge-dlink-dspW115",
+  "repository": "https://github.com/ncth/homebridge-dlink-dspW115",
   "keywords": [
     "homebridge-plugin",
     "homekit",
@@ -23,5 +21,11 @@
     "dsp",
     "w115"
   ],
-  "homepage": "https://github.com/biocross/homebridge-dlink-dspW115"
+  "homepage": "https://github.com/ncth/homebridge-dlink-dspW115",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "dlink_websocketclient": "^0.4.1"
+  }
 }

@@ -1,0 +1,30 @@
+{
+    "pluginAlias": "DlinkSmartPlug",
+    "pluginType": "accessory",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "required": true
+        },
+        "ip": {
+            "title": "IP",
+            "type": "string",
+            "required" : true,
+            "format": "ipv4",
+            "description": "The IP under which the smart plug is accessible in your network."
+        },
+        "pin": {
+            "title": "Pin",
+            "type": "string",
+            "required": true,
+            "description": "The pin or device token with which the smart plug can be controlled."
+        }
+      }
+    },
+    "form": null,
+    "display": null
+  }
+  
