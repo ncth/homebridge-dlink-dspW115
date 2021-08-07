@@ -1,6 +1,7 @@
 # homebridge-dlink-dspW115
 Homebridge plugin to control the Dlink DSP-W115 Smart Socket.
 
+This is a fork of https://github.com/biocross/homebridge-dlink-dspW115. It aims to improve the usability of the plugin by offering gui configuration, as well as the handeling of errors in the connection to the smart plug.
 
 Based on the excellent work done by @[Garfonso](https://github.com/Garfonso), this is basically a wrapper over his node library at https://github.com/Garfonso/dlinkWebSocketClient
 
@@ -16,4 +17,4 @@ To be able to control the dlink socket via homebridge, it needs to unlinked from
 
 You can now use your PIN and control the device with this plugin.
 
-Configure the plugin in the homebridge gui.
+Configure your plug in the plugins settings in the Homebridge gui.

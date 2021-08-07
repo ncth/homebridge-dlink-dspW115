@@ -35,11 +35,14 @@ class DlinkSmartPlug {
 			model: "w115",
 			keepAlive: 0
 		});
-
+		try{
 		this.client.login().then(async () => {
 			console.info("[Dlink DSP-W115] Connected to Smart Plug")
 		});
-
+		} catch(e){
+			this.log.info("An error occurred when trying to connect to the smart plug. This might be caused by a wrong ip or wrong pin.")
+			this.log.info(e)
+		}
 	}
 
 
@@ -52,22 +55,31 @@ class DlinkSmartPlug {
 
 	async getOnHandler() {
 		this.log.debug('Getting outlet state');
-		if(this.client.isDeviceReady()){
-			return await this.client.state();
-		} else{
-			this.client.login().then(async () => {
+		try{
+			if(this.client.isDeviceReady()){
 				return await this.client.state();
-			});
+			} else{
+				this.client.login().then(async () => {
+					return await this.client.state();
+				});
+			}
+		} catch(e){
+			this.log.info(e)
 		}
 	}
 
 	async setOnHandler(value) {
-		if(this.client.isDeviceReady()){
-			await this.client.switch(value);
-		} else{
-			this.client.login().then(async () => {
+		this.log.debug('Setting outlet state to '+value)
+		try{
+			if(this.client.isDeviceReady()){
 				await this.client.switch(value);
-			});
+			} else{
+				this.client.login().then(async () => {
+					await this.client.switch(value);
+				});
+			}
+		} catch(e){
+			this.log.info(e)
 		}
 	}
 }
